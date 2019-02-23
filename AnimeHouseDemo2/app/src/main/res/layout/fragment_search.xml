@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editSearch"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/shape"
+                android:ems="10"
+                android:hint="Search for anime..."
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/searchBtnSearch"
+                android:layout_width="45dp"
+                android:layout_height="35dp"
+                android:background="@drawable/ic_search_black_24dp" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/direction"
+            android:drawableLeft="@drawable/line"
+            android:text="the data that gana come will be title , pic , date , type , reviews ..."
+            android:textSize="20sp" />
+
+    </LinearLayout>
+</FrameLayout>

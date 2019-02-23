@@ -42,6 +42,62 @@ public class top_results extends AppCompatActivity {
 
  public void getData(String Url) {
 
+        String url = Url;
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        //anName.setText("Response: " + response.toString());
+
+
+                        //title -- rank - img - type - date - url
+                        try {
+
+                            JSONArray jr = response.getJSONArray("top");
+
+                            for (int i = 0; i < 10; i++) {
+                                tob = new tob_item();
+                                JSONObject jsonObject = jr.getJSONObject(i);
+
+                                tob.setTitle(jsonObject.getString("title"));
+                                tob.setRank(jsonObject.getInt("rank"));
+                                tob.setUrl(jsonObject.getString("url"));
+                                tob.setDate(jsonObject.getString("start_date"));
+                                tob.setImage_url(jsonObject.getString("image_url"));
+                                tob.setType(jsonObject.getString("type"));
+                                TopList.add(tob);
+                                System.out.println("The data .......");
+                                System.out.println(TopList.get(i).getAnimeName());
+                            }
+
+                            // Adds the data string to the TextView "results"
+                            //anName.setText(data);
+
+                            listView.setAdapter(new top_Adapter(getApplicationContext(), 0, TopList));
+
+                        }
+                        // Try and catch are included to handle any errors due to JSON
+                        catch (JSONException e) {
+                            // If an error occurs, this prints the error to the log
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+                        Toast.makeText(top_results.this, "error", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        // Access the RequestQueue through your singleton class.
+        MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest);
+    
+
 }
 
 }

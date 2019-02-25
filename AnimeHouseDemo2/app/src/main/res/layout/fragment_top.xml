@@ -47,6 +47,7 @@
             android:textSize="20sp" />
 
         <TextView
+            android:layout_marginTop="150dp"
             android:id="@+id/errorText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

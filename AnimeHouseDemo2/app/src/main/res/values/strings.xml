@@ -7,5 +7,19 @@
 
     <string name="Open">NavBar</string>
     <string name="Close">NavBar</string>
+    <string name="title_activity_translator">translator</string>
 
+    <string-array name="languages">
+        <item>English</item>
+        <item>Arabic</item>
+        <item>Dutch</item>
+        <item>Greek</item>
+        <item>Italian</item>
+        <item>Irish</item>
+        <item>Spanish</item>
+        <item>Korean</item>
+        <item>Chinese</item>
+        <item>Japanese</item>
+        <item>German</item>
+    </string-array>
 </resources>
